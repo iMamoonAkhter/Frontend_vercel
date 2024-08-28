@@ -37,7 +37,6 @@ const Profile = () => {
   
     const formData = new FormData();
     formData.append("image", file);
-  
     try {
       const response = await fetch(`${host}/api/auth/uploadprofileimage`, {
         method: "POST",
@@ -46,8 +45,9 @@ const Profile = () => {
         },
         body: formData,
       });
-  
+      console.log(response);
       const data = await response.json();
+      console.log('upload: ',data);
       if (data.message === "Profile image uploaded successfully") {
         toast.success("Profile picture updated successfully");
   
@@ -60,6 +60,7 @@ const Profile = () => {
         toast.error(data.message);
       }
     } catch (err) {
+      console.log(err);
       toast.error(err.message);
     }
   };

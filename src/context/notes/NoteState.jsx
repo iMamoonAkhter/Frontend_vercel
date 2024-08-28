@@ -3,13 +3,14 @@ import NoteContext from "./noteContext";
 import { toast } from "react-toastify";
 
 const NoteState = (props) => {
-  const host = "http://localhost:5000";
+  const host = "https://backend-vercel-kappa.vercel.app";
   const notesInitial = [];
   const [notes, setNotes] = useState([]);
   const [userData, setUserData] = useState(null);
-
   const fetchUserData = async () => {
     try {
+  console.log(host);
+
       const response = await fetch(`${host}/api/auth/getuser`, {
         method: "POST",
         headers: {
