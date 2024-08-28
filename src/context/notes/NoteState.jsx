@@ -9,7 +9,6 @@ const NoteState = (props) => {
   const [userData, setUserData] = useState(null);
   const fetchUserData = async () => {
     try {
-  console.log(host);
 
       const response = await fetch(`${host}/api/auth/getuser`, {
         method: "POST",

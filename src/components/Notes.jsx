@@ -25,7 +25,7 @@ const Notes = () => {
     } else {
       navigate("/login");
     }
-  }, [getNotes, navigate]);
+  }, [navigate]);
 
   const [note, setNote] = useState({
     etitle: "",
